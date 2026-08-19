@@ -1,0 +1,79 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# This workflow intentionally checks out live Interchange until mediated
+# credentials ship in a released package; it is integration CI, not release CI.
+
+jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: x-tools
+      - uses: actions/checkout@v4
+        with:
+          repository: corbitsdev/interchange
+          path: interchange
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+      - name: Install Interchange (for @intx/* links)
+        working-directory: interchange
+        run: bun install --frozen-lockfile
+      - name: Install x-tools
+        working-directory: x-tools
+        run: bun install --frozen-lockfile
+      - name: Link Interchange packages
+        working-directory: x-tools
+        run: bun run link:intx
+      - working-directory: x-tools
+        run: bun run typecheck
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: x-tools
+      - uses: actions/checkout@v4
+        with:
+          repository: corbitsdev/interchange
+          path: interchange
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+      - working-directory: interchange
+        run: bun install --frozen-lockfile
+      - working-directory: x-tools
+        run: bun install --frozen-lockfile
+      - working-directory: x-tools
+        run: bun run link:intx
+      - working-directory: x-tools
+        run: bun run test
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: x-tools
+      - uses: actions/checkout@v4
+        with:
+          repository: corbitsdev/interchange
+          path: interchange
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+      - working-directory: interchange
+        run: bun install --frozen-lockfile
+      - working-directory: x-tools
+        run: bun install --frozen-lockfile
+      - working-directory: x-tools
+        run: bun run link:intx
+      - working-directory: x-tools
+        run: bun run build
