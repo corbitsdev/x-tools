@@ -1,0 +1,3 @@
+# Resolve Interchange packages to TypeScript source (same as Interchange itself).
+[resolve]
+conditions = ["intx-src"]
