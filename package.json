@@ -17,8 +17,13 @@
   "engines": {
     "node": ">=24"
   },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test smoke.test.mjs"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "typescript": "^5"
   },
   "peerDependencies": {
     "typescript": "^5"

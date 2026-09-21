@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node -e "const m=Number(process.versions.node.split('.')[0]); if (m<24) throw new Error('need Node 24+, got '+process.version)"
+      - run: npm ci
+      - run: npx tsc --noEmit
+      - run: node --test smoke.test.mjs
