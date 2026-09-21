@@ -1,6 +1,6 @@
 # @corbits/x-tools
 
-Interchange tools for X (Twitter). The package name is `@corbits/x-tools`; Node >= 24 is the engines floor. `main` has no named tool exports — `index.ts` is the Bun scaffold, not a tool API.
+Interchange tools for X (Twitter). The package name is `@corbits/x-tools`; Node >= 24 is the engines floor. `main` has no named tool exports — `index.ts` is the Bun scaffold, not a tool API. Product intent is in `PRODUCT.md`; this README is the shipped surface only.
 
 ## Runtime support
 
