@@ -1,6 +1,6 @@
 # @corbits/x-tools
 
-Interchange tools for X (Twitter). The published package name is `@corbits/x-tools`; Node >= 24 is the engines floor. The public tool surface is not on `main` yet — `index.ts` is the Bun scaffold, not a tool export.
+Interchange tools for X (Twitter). The package name is `@corbits/x-tools`; Node >= 24 is the engines floor. `main` has no named tool exports — `index.ts` is the Bun scaffold, not a tool API.
 
 ## Runtime support
 
@@ -15,20 +15,13 @@ yarn add @corbits/x-tools
 bun add @corbits/x-tools
 ```
 
-Import from the package name in `package.json`. There is no `exports` map and no named tool API on this branch.
+Side-effect import from the package name. There is no named tool export on this branch.
 
 ```ts
 import "@corbits/x-tools";
 ```
 
-The current module is the Bun starter (`index.ts` logs on load). Consumers should wait for a tool export before granting this package to an agent.
-
-```ts
-// package.json: { "name": "@corbits/x-tools", "module": "index.ts" }
-import pkg from "./package.json" with { type: "json" };
-
-console.log(pkg.name);
-```
+`index.ts` logs on load. Wait for a tool export before granting this package to an agent.
 
 ## How it works
 
