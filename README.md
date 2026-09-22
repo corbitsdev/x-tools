@@ -1,10 +1,10 @@
 # @corbits/x-tools
 
-Interchange tools for X (Twitter). The package name is `@corbits/x-tools`; Node >= 24 is the engines floor. `main` has no named tool exports — `index.ts` is the Bun scaffold, not a tool API.
+Interchange tools for X (Twitter). The package name is `@corbits/x-tools`; Node >= 24 is the engines floor. `index.ts` is the Bun entry point. Product intent is in `PRODUCT.md`; this README is the shipped surface only.
 
 ## Runtime support
 
-Node >= 24 is the engines floor. There is no `exports` map; `package.json` points `module` at `index.ts`. Bun can load that source. Native Node does not load it as a published library.
+Node >= 24 is the engines floor. `package.json` points `module` at `index.ts`. Bun loads that source directly.
 
 ## Quickstart
 
@@ -15,17 +15,17 @@ yarn add @corbits/x-tools
 bun add @corbits/x-tools
 ```
 
-Side-effect import from the package name. There is no named tool export on this branch.
+Side-effect import from the package name. Tool exports land in follow-up work.
 
 ```ts
 import "@corbits/x-tools";
 ```
 
-`index.ts` logs on load. Wait for a tool export before granting this package to an agent.
+`index.ts` logs on load. Grant this package to an agent once a tool export is available.
 
 ## How it works
 
-This repository is the X tools package shell: license LGPL-2.1-only, Node 24 floor, Bun + TypeScript. Tool handlers and an Interchange sidecar bundle land in follow-up work, not on this README.
+This repository is the X tools package shell: license LGPL-2.1-only, Node 24 floor, Bun + TypeScript. Tool handlers and an Interchange sidecar bundle land in follow-up work.
 
 ## Development
 
