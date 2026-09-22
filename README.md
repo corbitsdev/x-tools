@@ -15,13 +15,7 @@ yarn add @corbits/x-tools
 bun add @corbits/x-tools
 ```
 
-Side-effect import from the package name. Tool exports land in follow-up work.
-
-```ts
-import "@corbits/x-tools";
-```
-
-`index.ts` logs on load. Grant this package to an agent once a tool export is available.
+There are no named tool exports on this branch — `index.ts` is the Bun entry point, not a tool API. Grant this package to an agent once a tool export is available.
 
 ## How it works
 
