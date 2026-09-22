@@ -1,6 +1,6 @@
 # @corbits/x-tools
 
-Interchange tools for X (Twitter). The package name is `@corbits/x-tools`; Node >= 24 is the engines floor. `index.ts` is the Bun entry point. Product intent is in `PRODUCT.md`; this README is the shipped surface only.
+Interchange tools for X (Twitter). The package name is `@corbits/x-tools`; Node >= 24 is the engines floor. `index.ts` is the Bun entry point. This README documents the shipped surface only, not product intent.
 
 ## Runtime support
 
