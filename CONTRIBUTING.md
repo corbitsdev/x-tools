@@ -2,14 +2,8 @@
 
 A small, deliberately boring codebase: strict TypeScript, no magic.
 
-Setup and commands are in the [README](./README.md#working-on-it). `bun run
+Setup and commands are in the [README](./README.md#development). `bun run
 typecheck` must be clean — it is its own CI step, and `any` is not a way past it.
-
-## Interchange (local)
-
-`bun run link:intx` symlinks `@intx/*` from a sibling `../interchange` checkout
-(live `intx-src`, not npm `0.2.2`). Peer dependencies still declare
-`@intx/agent` and `@intx/types`.
 
 See [ARCHITECTURE.md](./ARCHITECTURE.md) for the delivery plan and non-goals.
 
