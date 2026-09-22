@@ -21,7 +21,6 @@ tools (credential handle `x-api`). See ARCHITECTURE.md.
 
 ```bash
 bun install
-bun run link:intx
 bun run typecheck
 bun test
 bun run build

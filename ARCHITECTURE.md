@@ -52,9 +52,9 @@ src/
   index.ts
 ```
 
-Depends on a sibling `../interchange` checkout. Run `bun run link:intx` to
-symlink its packages so we track live `intx-src` — not the stale npm `0.2.2`
-cut.
+Depends on the published `@intx/agent` and `@intx/types` packages (peer
+dependencies, `>=0.4.0`).
+
 ## Tool delivery plan (v1)
 
 1. Users → 2. Posts → 3. Search → 4. Bookmarks → 5. Media → 6. News / Trends

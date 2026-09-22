@@ -40,16 +40,12 @@ request timeout, cancellation, and `XAPIError` for non-2xx responses. See
 git clone https://github.com/corbitsdev/x-tools.git
 cd x-tools
 bun install
-bun run link:intx
 bun run typecheck
 bun run test
 bun run build
 ```
 
-`bun run link:intx` links a sibling Interchange checkout at `../interchange`;
-it's required before `typecheck`, `test`, or `build` since `@intx/agent` and
-`@intx/types` aren't published yet. See [CONTRIBUTING.md](./CONTRIBUTING.md)
-and [ARCHITECTURE.md](./ARCHITECTURE.md).
+See [CONTRIBUTING.md](./CONTRIBUTING.md) and [ARCHITECTURE.md](./ARCHITECTURE.md).
 
 ## License
 
